@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Ceyda Yenilmez 2018280053</title>
+</head>
 <body>
-<h2>2019 Güz Döneminin ilk ödevi</h2>
-<label for="id1">Metin kutusu 1</label>
-<input type='text' id='id1' /> 
-<br>
-<label for="id2">Metin kutusu 2</label>
-<input type='text' id='id2' /> 
-<br><br>
-<button type="button">Topla</button>
-<br><br>
-<label for="id3">Metin kutusu 3</label>
-<input type='text' id='id3' /> 
-<br>
-<label for="id4">Metin kutusu 4</label>
-<input type='text' id='id4' /> 
-<br><br>
-<button type="button">Yapıştır</button>
+    <h1>Ceyda Yenilmez</h1>
+    <h1>2018280053</h1> 
+    <h2>2019 GÃ¼z DÃ¶neminin ilk Ã¶devi</h2>
+    <form>
+    <label for="id1">Metin kutusu 1
+        <input type='text' onkeypress="return isNumberKey(event)" id='id1'> 
+    </label>
+    <br>
+    <label for="id2">Metin kutusu 2
+        <input type='text' onkeypress="return isNumberKey(event)" id='id2'> 
+    </label>
+    <br><br>
+        <input type="button" value="Topla" id="hesap">
+    <br><br>
+
+    <label for="id3">Metin kutusu 3
+        <input type='text' id='id3'> 
+    </label>
+    <br>
+    <label for="id4">Metin kutusu 4
+        <input type='text' id='id4'> 
+    </label>
+    <br><br>
+        <input type="button" value="Yapistir" id="birlestir">
+    </form>
+    <div id="sonuc"></div>
+    
+    <script>
+        var metin1=document.getElementById("id1");
+        var metin2=document.getElementById("id2");
+        var hesapBtn=document.getElementById("hesap");
+        
+
+        hesapBtn.onclick=function()
+        {  
+            var toplam= Number(metin1.value) + Number(metin2.value);
+            alert(toplam)
+         }
+
+         var metin3=document.getElementById("id3");
+         var metin4=document.getElementById("id4");
+         var yapistirBtn=document.getElementById("birlestir");
+            
+        yapistirBtn.onclick=function()
+        {
+            var str1 = String(metin3.value);
+            var str2 = String(metin4.value);
+            var birlestir = str1.concat(str2);
+            alert(birlestir);
+        }
+        
+
+        function isNumberKey(evt)
+        {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+</script>
+
 </body>
-</html>
+</html> 
